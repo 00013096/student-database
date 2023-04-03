@@ -1,0 +1,21 @@
+extends layout.pug 
+
+block content 
+    form(action="/search" method='POST')
+        div.search-main-container
+            .search-container
+                input(type ="text" name="searchedText" placeholder = "Search for a student"
+                value = searchedText)
+                button Search
+            if students
+                each student in students
+                    .list-of-students
+                        p.student-name=student.firstName+"\t"+student.lastName
+                        div
+                            a.edit(href=`/edit/${ student.id }`) 
+                                img(src="https://www.freeiconspng.com/thumbs/edit-icon-png/edit-editor-pen-pencil-write-icon--4.png")
+                        div
+                            a.delete(href=`/students/delete/${ student.id }`) x
+                        div
+                            a.show(href=`/students/${ student.id}`)
+                                img(src="https://cdn2.iconfinder.com/data/icons/picol-vector/32/view-512.png") 

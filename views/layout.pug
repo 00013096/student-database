@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+    head
+        title Students Database
+        link(rel="stylesheet" href="/static/styles/style.css")
+    body 
+        .main
+            block announcement
+            header.navbar 
+                h1 
+                    a(href="/") Students Database
+
+                nav.nav 
+                    a(href="/students") All Students 
+                    a(href="/create") Add Student
+                    a(href="/search") Search
+
+            block content
